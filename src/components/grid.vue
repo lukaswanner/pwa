@@ -73,6 +73,7 @@
         },
         computed: {
             cells() {
+                console.log("CELLS: ",store.state.cells)
                 return store.state.cells
             },
             kind() {
