@@ -35,11 +35,13 @@
 <script>
     import store from '../assets/data.js'
     import setCard from '../javascripts/setCard.js'
+    import offlineData from "../assets/gameData.json"
 
     global.jQuery = require('jquery');
 
     let $ = global.jQuery;
     window.$ = $;
+
 
     function loadjson() {
         return new Promise(function (resolve, reject) {
@@ -56,7 +58,9 @@
                     reject(result)
                 }
             })
-        })
+        }).catch((error) => {
+            store.commit("fill", {json: offlineData, size: offlineData.gameField.grid.cells.length});
+            console.log("currently offline promise not working",error)})
     }
 
     export default {
@@ -73,7 +77,6 @@
         },
         computed: {
             cells() {
-                console.log("CELLS: ",store.state.cells)
                 return store.state.cells
             },
             kind() {
@@ -91,8 +94,10 @@
                 } else {
                     //w8 for response
                     loadjson().then(function getHand(response) {
-                        console.log(response)
+                        console.log("RESPONE:",response)
                         setCard()
+                    }).catch(function getHand(){
+                        alert(("currently offline"))
                     })
                 }
             }

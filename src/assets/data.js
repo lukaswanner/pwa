@@ -105,7 +105,7 @@ const store = new Vuex.Store({
         },
         setPlayer(state,player){
             state.selectedPlayer = player
-        }
+        },
     }
 })
 
