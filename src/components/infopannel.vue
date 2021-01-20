@@ -77,7 +77,7 @@
     function loadjson() {
         $.ajax({
             method: "GET",
-            url: "http://localhost:9000/json",
+            url: "https://ancient-savannah-40407.herokuapp.com/json",
             dataType: "json",
             success: function (result) {
                 console.log(result)
@@ -114,7 +114,7 @@
                 console.log("submit")
                 $.ajax({
                     method: "GET",
-                    url: "http://localhost:9000/scrabble/submit",
+                    url: "https://ancient-savannah-40407.herokuapp.com/scrabble/submit",
                     success: function () {
                         loadjson()
                     }
@@ -124,7 +124,7 @@
                 console.log("new game")
                 $.ajax({
                     method: "GET",
-                    url: "http://localhost:9000/scrabble/new",
+                    url: "https://ancient-savannah-40407.herokuapp.com/scrabble/new",
 
                     success: function () {
                         loadjson()
@@ -135,9 +135,9 @@
                 console.log("switching cards")
                 let url
                 if (player === "A") {
-                    url = "http://localhost:9000/scrabble/switch/A"
+                    url = "https://ancient-savannah-40407.herokuapp.com/scrabble/switch/A"
                 } else {
-                    url = "http://localhost:9000/scrabble/switch/B"
+                    url = "https://ancient-savannah-40407.herokuapp.com/scrabble/switch/B"
                 }
                 $.ajax({
                     method: "GET",
@@ -149,7 +149,7 @@
                 });
             },
             resize: function (size) {
-                let url = "http://localhost:9000/scrabble/resize/" + size
+                let url = "https://ancient-savannah-40407.herokuapp.com/scrabble/resize/" + size
                 console.log("resize")
                 $.ajax({
                     method: "GET",

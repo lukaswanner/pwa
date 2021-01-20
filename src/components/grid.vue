@@ -47,7 +47,7 @@
         return new Promise(function (resolve, reject) {
             $.ajax({
                 method: "GET",
-                url: "http://localhost:9000/json",
+                url: "https://ancient-savannah-40407.herokuapp.com/json",
                 dataType: "json",
                 success: function (result) {
                     console.log(result)

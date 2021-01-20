@@ -32,7 +32,7 @@ function setCardcurrPlayer() {
             let activerow = isActive(cells)
             if (activerow[0]) {
                 let activeCard = active[1]
-                let url = "http://localhost:9000/scrabble/set/" + (activerow[1] - 1) + "/" +  (i-1) +"/" + activeCard
+                let url = "https://ancient-savannah-40407.herokuapp.com/scrabble/set/" + (activerow[1] - 1) + "/" +  (i-1) +"/" + activeCard
                 console.log(url)
                 $.ajax({
                     method: "GET",
