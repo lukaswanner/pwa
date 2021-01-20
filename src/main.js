@@ -16,5 +16,5 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const url = "wss://https://ancient-savannah-40407.herokuapp.com/websocket"
+const url = "wss://ancient-savannah-40407.herokuapp.com/websocket"
 connect(url)
